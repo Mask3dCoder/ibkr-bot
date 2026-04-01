@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IBKR Test Suite Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .summary { 
+            background: #f5f5f5; 
+            padding: 15px; 
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .stat { display: inline-block; margin-right: 30px; margin-bottom: 10px; }
+        .stat-label { font-weight: bold; }
+        .stat-value { font-size: 1.2em; }
+        .pass { color: green; }
+        .fail { color: red; }
+        .error { color: orange; }
+        .skip { color: gray; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .details { background: #f9f9f9; padding: 10px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>IBKR Paper Trading Test Suite Report</h1>
+    
+    <div class="summary">
+        <h2>Summary</h2>
+        <div class="stat">
+            <span class="stat-label">Total Tests:</span>
+            <span class="stat-value">20</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Passed:</span>
+            <span class="stat-value pass">3</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Failed:</span>
+            <span class="stat-value fail">17</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Errors:</span>
+            <span class="stat-value error">0</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Success Rate:</span>
+            <span class="stat-value">15.00%</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Avg Response Time:</span>
+            <span class="stat-value">10897.68ms</span>
+        </div>
+        <div class="stat">
+            <span class="stat-label">Total Duration:</span>
+            <span class="stat-value">217953.58ms</span>
+        </div>
+    </div>
+    
+    <h2>Test Results</h2>
+    <table>
+        <tr>
+            <th>Test Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Response Time</th>
+            <th>Details</th>
+        </tr>
+
+        <tr>
+            <td>test_socket_port_connectivity</td>
+            <td>Connection & Authentication</td>
+            <td class="fail">FAIL</td>
+            <td>746.81ms</td>
+            <td>
+                <pre>{}</pre>
+                
+                <div class="details">
+                    <strong>Error:</strong> 'IB' object has no attribute 'state'
+                    <br><pre>AttributeError: 'IB' object has no attribute 'state'</pre>
+                </div>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_client_id_allocation</td>
+            <td>Connection & Authentication</td>
+            <td class="fail">FAIL</td>
+            <td>2374.32ms</td>
+            <td>
+                <pre>{}</pre>
+                
+                <div class="details">
+                    <strong>Error:</strong> 'IB' object has no attribute 'clientId'
+                    <br><pre>AttributeError: 'IB' object has no attribute 'clientId'</pre>
+                </div>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_duplicate_client_id</td>
+            <td>Connection & Authentication</td>
+            <td class="pass">PASS</td>
+            <td>1197.45ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_reconnection_scenarios</td>
+            <td>Connection & Authentication</td>
+            <td class="pass">PASS</td>
+            <td>902.98ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_server_version_negotiation</td>
+            <td>Connection & Authentication</td>
+            <td class="fail">FAIL</td>
+            <td>368.83ms</td>
+            <td>
+                <pre>{}</pre>
+                
+                <div class="details">
+                    <strong>Error:</strong> 'IB' object has no attribute 'serverVersion'
+                    <br><pre>AttributeError: 'IB' object has no attribute 'serverVersion'</pre>
+                </div>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_limit_order_submission</td>
+            <td>Order Execution</td>
+            <td class="fail">FAIL</td>
+            <td>15011.34ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_stop_order_functionality</td>
+            <td>Order Execution</td>
+            <td class="fail">FAIL</td>
+            <td>15001.71ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_order_modification</td>
+            <td>Order Execution</td>
+            <td class="fail">FAIL</td>
+            <td>15018.32ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_order_cancellation</td>
+            <td>Order Execution</td>
+            <td class="fail">FAIL</td>
+            <td>15019.05ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_real_time_quote_streaming</td>
+            <td>Market Data</td>
+            <td class="fail">FAIL</td>
+            <td>15011.32ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_historical_data_retrieval</td>
+            <td>Market Data</td>
+            <td class="fail">FAIL</td>
+            <td>15197.02ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_tick_data_streaming</td>
+            <td>Market Data</td>
+            <td class="fail">FAIL</td>
+            <td>15010.44ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_account_summary_retrieval</td>
+            <td>Account & Portfolio</td>
+            <td class="fail">FAIL</td>
+            <td>15010.87ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_positions_synchronization</td>
+            <td>Account & Portfolio</td>
+            <td class="fail">FAIL</td>
+            <td>15012.52ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_margin_requirements</td>
+            <td>Account & Portfolio</td>
+            <td class="fail">FAIL</td>
+            <td>15013.99ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_pnl_tracking</td>
+            <td>Account & Portfolio</td>
+            <td class="fail">FAIL</td>
+            <td>15005.47ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_invalid_order_rejection</td>
+            <td>Error Handling</td>
+            <td class="fail">FAIL</td>
+            <td>15005.62ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_connection_timeout_handling</td>
+            <td>Error Handling</td>
+            <td class="pass">PASS</td>
+            <td>2029.40ms</td>
+            <td>
+                <pre>{
+  "timeout_handled": true
+}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_insufficient_funds_rejection</td>
+            <td>Error Handling</td>
+            <td class="fail">FAIL</td>
+            <td>15019.03ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+        <tr>
+            <td>test_api_version_compatibility</td>
+            <td>Error Handling</td>
+            <td class="fail">FAIL</td>
+            <td>14997.08ms</td>
+            <td>
+                <pre>{}</pre>
+                
+            </td>
+        </tr>
+
+    </table>
+    
+    <p><em>Report generated at: 2026-01-06T00:23:51.303922</em></p>
+</body>
+</html>

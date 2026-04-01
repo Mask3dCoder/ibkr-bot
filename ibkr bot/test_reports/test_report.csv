@@ -1,0 +1,21 @@
+test_name,test_category,status,response_time_ms,start_time,end_time,error_message
+test_socket_port_connectivity,Connection & Authentication,FAIL,746.81,2026-01-06T00:20:13.343339,2026-01-06T00:20:14.090145,'IB' object has no attribute 'state'
+test_client_id_allocation,Connection & Authentication,FAIL,2374.32,2026-01-06T00:20:14.090145,2026-01-06T00:20:16.464469,'IB' object has no attribute 'clientId'
+test_duplicate_client_id,Connection & Authentication,PASS,1197.45,2026-01-06T00:20:16.464469,2026-01-06T00:20:17.661919,
+test_reconnection_scenarios,Connection & Authentication,PASS,902.98,2026-01-06T00:20:17.661919,2026-01-06T00:20:18.564903,
+test_server_version_negotiation,Connection & Authentication,FAIL,368.83,2026-01-06T00:20:18.564903,2026-01-06T00:20:18.933736,'IB' object has no attribute 'serverVersion'
+test_limit_order_submission,Order Execution,FAIL,15011.34,2026-01-06T00:20:18.933736,2026-01-06T00:20:33.945072,
+test_stop_order_functionality,Order Execution,FAIL,15001.71,2026-01-06T00:20:33.945072,2026-01-06T00:20:48.946780,
+test_order_modification,Order Execution,FAIL,15018.32,2026-01-06T00:20:48.946780,2026-01-06T00:21:03.965103,
+test_order_cancellation,Order Execution,FAIL,15019.05,2026-01-06T00:21:03.965103,2026-01-06T00:21:18.984153,
+test_real_time_quote_streaming,Market Data,FAIL,15011.32,2026-01-06T00:21:18.985156,2026-01-06T00:21:33.996473,
+test_historical_data_retrieval,Market Data,FAIL,15197.02,2026-01-06T00:21:33.996473,2026-01-06T00:21:49.193492,
+test_tick_data_streaming,Market Data,FAIL,15010.44,2026-01-06T00:21:49.193492,2026-01-06T00:22:04.203929,
+test_account_summary_retrieval,Account & Portfolio,FAIL,15010.87,2026-01-06T00:22:04.205929,2026-01-06T00:22:19.216802,
+test_positions_synchronization,Account & Portfolio,FAIL,15012.52,2026-01-06T00:22:19.216802,2026-01-06T00:22:34.229323,
+test_margin_requirements,Account & Portfolio,FAIL,15013.99,2026-01-06T00:22:34.229323,2026-01-06T00:22:49.243317,
+test_pnl_tracking,Account & Portfolio,FAIL,15005.47,2026-01-06T00:22:49.243317,2026-01-06T00:23:04.248783,
+test_invalid_order_rejection,Error Handling,FAIL,15005.62,2026-01-06T00:23:04.248783,2026-01-06T00:23:19.254405,
+test_connection_timeout_handling,Error Handling,PASS,2029.4,2026-01-06T00:23:19.254405,2026-01-06T00:23:21.283808,
+test_insufficient_funds_rejection,Error Handling,FAIL,15019.03,2026-01-06T00:23:21.283808,2026-01-06T00:23:36.302843,
+test_api_version_compatibility,Error Handling,FAIL,14997.08,2026-01-06T00:23:36.302843,2026-01-06T00:23:51.299919,

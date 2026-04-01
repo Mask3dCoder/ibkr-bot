@@ -1,0 +1,213 @@
+{
+  "suite_name": "IBKR Paper Trading Test Suite",
+  "execution_time": {
+    "start": "2026-01-06T00:20:12.678228",
+    "end": "2026-01-06T00:23:51.299919",
+    "total_duration_ms": 217953.577
+  },
+  "summary": {
+    "total_tests": 20,
+    "passed": 3,
+    "failed": 17,
+    "errors": 0,
+    "skipped": 0,
+    "success_rate": 15.0,
+    "avg_response_time_ms": 10897.68
+  },
+  "tests": [
+    {
+      "name": "test_socket_port_connectivity",
+      "category": "Connection & Authentication",
+      "status": "FAIL",
+      "response_time_ms": 746.81,
+      "start_time": "2026-01-06T00:20:13.343339",
+      "end_time": "2026-01-06T00:20:14.090145",
+      "details": {},
+      "error": {
+        "message": "'IB' object has no attribute 'state'",
+        "trace": "AttributeError: 'IB' object has no attribute 'state'"
+      }
+    },
+    {
+      "name": "test_client_id_allocation",
+      "category": "Connection & Authentication",
+      "status": "FAIL",
+      "response_time_ms": 2374.32,
+      "start_time": "2026-01-06T00:20:14.090145",
+      "end_time": "2026-01-06T00:20:16.464469",
+      "details": {},
+      "error": {
+        "message": "'IB' object has no attribute 'clientId'",
+        "trace": "AttributeError: 'IB' object has no attribute 'clientId'"
+      }
+    },
+    {
+      "name": "test_duplicate_client_id",
+      "category": "Connection & Authentication",
+      "status": "PASS",
+      "response_time_ms": 1197.45,
+      "start_time": "2026-01-06T00:20:16.464469",
+      "end_time": "2026-01-06T00:20:17.661919",
+      "details": {}
+    },
+    {
+      "name": "test_reconnection_scenarios",
+      "category": "Connection & Authentication",
+      "status": "PASS",
+      "response_time_ms": 902.98,
+      "start_time": "2026-01-06T00:20:17.661919",
+      "end_time": "2026-01-06T00:20:18.564903",
+      "details": {}
+    },
+    {
+      "name": "test_server_version_negotiation",
+      "category": "Connection & Authentication",
+      "status": "FAIL",
+      "response_time_ms": 368.83,
+      "start_time": "2026-01-06T00:20:18.564903",
+      "end_time": "2026-01-06T00:20:18.933736",
+      "details": {},
+      "error": {
+        "message": "'IB' object has no attribute 'serverVersion'",
+        "trace": "AttributeError: 'IB' object has no attribute 'serverVersion'"
+      }
+    },
+    {
+      "name": "test_limit_order_submission",
+      "category": "Order Execution",
+      "status": "FAIL",
+      "response_time_ms": 15011.34,
+      "start_time": "2026-01-06T00:20:18.933736",
+      "end_time": "2026-01-06T00:20:33.945072",
+      "details": {}
+    },
+    {
+      "name": "test_stop_order_functionality",
+      "category": "Order Execution",
+      "status": "FAIL",
+      "response_time_ms": 15001.71,
+      "start_time": "2026-01-06T00:20:33.945072",
+      "end_time": "2026-01-06T00:20:48.946780",
+      "details": {}
+    },
+    {
+      "name": "test_order_modification",
+      "category": "Order Execution",
+      "status": "FAIL",
+      "response_time_ms": 15018.32,
+      "start_time": "2026-01-06T00:20:48.946780",
+      "end_time": "2026-01-06T00:21:03.965103",
+      "details": {}
+    },
+    {
+      "name": "test_order_cancellation",
+      "category": "Order Execution",
+      "status": "FAIL",
+      "response_time_ms": 15019.05,
+      "start_time": "2026-01-06T00:21:03.965103",
+      "end_time": "2026-01-06T00:21:18.984153",
+      "details": {}
+    },
+    {
+      "name": "test_real_time_quote_streaming",
+      "category": "Market Data",
+      "status": "FAIL",
+      "response_time_ms": 15011.32,
+      "start_time": "2026-01-06T00:21:18.985156",
+      "end_time": "2026-01-06T00:21:33.996473",
+      "details": {}
+    },
+    {
+      "name": "test_historical_data_retrieval",
+      "category": "Market Data",
+      "status": "FAIL",
+      "response_time_ms": 15197.02,
+      "start_time": "2026-01-06T00:21:33.996473",
+      "end_time": "2026-01-06T00:21:49.193492",
+      "details": {}
+    },
+    {
+      "name": "test_tick_data_streaming",
+      "category": "Market Data",
+      "status": "FAIL",
+      "response_time_ms": 15010.44,
+      "start_time": "2026-01-06T00:21:49.193492",
+      "end_time": "2026-01-06T00:22:04.203929",
+      "details": {}
+    },
+    {
+      "name": "test_account_summary_retrieval",
+      "category": "Account & Portfolio",
+      "status": "FAIL",
+      "response_time_ms": 15010.87,
+      "start_time": "2026-01-06T00:22:04.205929",
+      "end_time": "2026-01-06T00:22:19.216802",
+      "details": {}
+    },
+    {
+      "name": "test_positions_synchronization",
+      "category": "Account & Portfolio",
+      "status": "FAIL",
+      "response_time_ms": 15012.52,
+      "start_time": "2026-01-06T00:22:19.216802",
+      "end_time": "2026-01-06T00:22:34.229323",
+      "details": {}
+    },
+    {
+      "name": "test_margin_requirements",
+      "category": "Account & Portfolio",
+      "status": "FAIL",
+      "response_time_ms": 15013.99,
+      "start_time": "2026-01-06T00:22:34.229323",
+      "end_time": "2026-01-06T00:22:49.243317",
+      "details": {}
+    },
+    {
+      "name": "test_pnl_tracking",
+      "category": "Account & Portfolio",
+      "status": "FAIL",
+      "response_time_ms": 15005.47,
+      "start_time": "2026-01-06T00:22:49.243317",
+      "end_time": "2026-01-06T00:23:04.248783",
+      "details": {}
+    },
+    {
+      "name": "test_invalid_order_rejection",
+      "category": "Error Handling",
+      "status": "FAIL",
+      "response_time_ms": 15005.62,
+      "start_time": "2026-01-06T00:23:04.248783",
+      "end_time": "2026-01-06T00:23:19.254405",
+      "details": {}
+    },
+    {
+      "name": "test_connection_timeout_handling",
+      "category": "Error Handling",
+      "status": "PASS",
+      "response_time_ms": 2029.4,
+      "start_time": "2026-01-06T00:23:19.254405",
+      "end_time": "2026-01-06T00:23:21.283808",
+      "details": {
+        "timeout_handled": true
+      }
+    },
+    {
+      "name": "test_insufficient_funds_rejection",
+      "category": "Error Handling",
+      "status": "FAIL",
+      "response_time_ms": 15019.03,
+      "start_time": "2026-01-06T00:23:21.283808",
+      "end_time": "2026-01-06T00:23:36.302843",
+      "details": {}
+    },
+    {
+      "name": "test_api_version_compatibility",
+      "category": "Error Handling",
+      "status": "FAIL",
+      "response_time_ms": 14997.08,
+      "start_time": "2026-01-06T00:23:36.302843",
+      "end_time": "2026-01-06T00:23:51.299919",
+      "details": {}
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ibkr-platform"
+version = "0.1.0"
+description = "Institutional-grade algorithmic trading platform for Interactive Brokers"
+authors = [{name = "Trading Team", email = "dev@trading.local"}]
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "Proprietary"}
+
+dependencies = [
+    # Core async runtime
+    "uvloop>=0.19.0",
+    "aiomisc>=17.5.0",
+    
+    # IBKR connectivity
+    "ib-insync>=0.9.86",
+    
+    # Configuration & validation
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.2.0",
+    "pyyaml>=6.0.1",
+    "python-dotenv>=1.0.0",
+    
+    # Data processing
+    "numpy>=1.26.0",
+    "polars>=0.20.0",
+    "numba>=0.59.0",
+    "pyarrow>=15.0.0",
+    
+    # Database & persistence
+    "sqlalchemy[asyncio]>=2.0.25",
+    "asyncpg>=0.29.0",
+    "redis>=5.0.1",
+    "redis-om>=0.2.1",
+    
+    # Observability
+    "structlog>=24.1.0",
+    "colorama>=0.4.6",
+    "prometheus-client>=0.19.0",
+    "opentelemetry-api>=1.22.0",
+    "opentelemetry-sdk>=1.22.0",
+    "opentelemetry-exporter-prometheus>=0.43b0",
+    "opentelemetry-exporter-otlp>=1.22.0",
+    
+    # Utilities
+    "tenacity>=8.2.3",
+    "aiometer>=0.5.0",
+    "cachetools>=5.3.2",
+    "watchdog>=4.0.0",
+    
+    # Scientific computing
+    "scipy>=1.12.0",
+    "pandas>=2.2.0",
+    "statsmodels>=0.14.1",
+    
+    # HTTP client for data feeds
+    "httpx>=0.26.0",
+    "aiohttp>=3.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "pytest-benchmark>=4.0.0",
+    "pytest-timeout>=2.2.0",
+    "mypy>=1.8.0",
+    "ruff>=0.2.0",
+    "black>=24.1.0",
+    "ipython>=8.20.0",
+    "jupyter>=1.0.0",
+]
+
+performance = [
+    "cython>=3.0.8",
+    "line-profiler>=4.1.0",
+    "memory-profiler>=0.61.0",
+    "py-spy>=0.3.14",
+]
+
+monitoring = [
+    "grafana-client>=4.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ibkr_platform*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--tb=short",
+    "--cov=ibkr_platform",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "performance: marks tests as performance benchmarks",
+]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[[tool.mypy.overrides]]
+module = [
+    "ib_insync.*",
+    "numba.*",
+    "polars.*",
+]
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG", # flake8-unused-arguments
+    "SIM", # flake8-simplify
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+    "B008",  # do not perform function calls in argument defaults
+    "B905",  # zip without explicit strict parameter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # Allow unused imports in __init__.py
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+include = '\.pyi?$'
+
+[tool.coverage.run]
+source = ["ibkr_platform"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
